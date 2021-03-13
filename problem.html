@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Problem - Hybrid End-effector Concept</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="styles.css" rel="stylesheet">
+  </head>
+
+  <body class="d-flex h-100 bg-white">
+      <div class="d-flex w-100 h-100 mx-auto flex-column">
+        <nav class="navbar-expand-lg navbar-dark bg-dark ">
+          <div class="cover-container d-flex w-100 h-100 p-4 mx-auto flex-column text-center text-white">
+            <header class="mb-auto">
+              <h3 class="float-md-start mb-0">Hybrid End-effector Concept</h3>
+              <nav class="nav nav-masthead justify-content-center float-md-end">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="features.html">Features</a>
+                <a class="nav-link active" aria-current="page" href="problem.html">Problem</a>
+                <a class="nav-link" href="method.html">Method</a>
+              </nav>
+            </header>
+          </div>
+        </nav>
+
+        <div class="text-black text-justify cover-container d-flex w-100 h-100 p-4 mx-auto flex-column">
+          <h1 class="py-4">The status quo: humans in the loop</h1>
+          <img class="py-2" src="photos/picker.jpg" alt="">
+          <p class="pt-4">
+          An end-effector is a device commonly mounted at the end of a robotic arm that interacts with the environment around it, often performing a task. These devices are key components within industrial robotic installations, with usage across a number of industries from automotive to food and beverages. Leading industry’s adoption has been the use of bespoke end-effectors designed for specific tasks in controlled environments. Prolific examples include part assembly, spot wielding and machining. These devices enable users to reduce costs and enhance productivity by automating mundane and labour-intensive tasks.
+          </p>
+          <p>
+          Despite a general increase in robotic instillations over the last decade, in recent years the rate of adoption by the world’s largest markets has begun to slow. This saturation has been driven by current robotic solutions inability to tackle more challenging problems. Canonical problems within robotics such as picking a variety of objects from cluttered environments have yet to be solved with accurate, efficient and reliable solutions. As a result, many industries struggle to automate more general-purpose tasking. These problems differ to predecessors, instead requiring dexterous manipulation and robust grasping of a variety of objects in undetermined environments. A common example found in warehouses is the process of bin-picking, where an individual repeatedly picks objects out of small cluttered plastic bins.
+          </p>
+          <p>
+          Solutions to general-purpose tasking are often more multi-disciplinary, requiring expertise in end-effector design, computer vision, motion planning and robotic grasp planning. Over the last decade, progress has been rooted in the field of computer vision and dexterous manipulation algorithms. This has been aided by the emergence of deep learning, plentiful compute-power and large datasets. A recent example of this is the research conducted by OpenAI, who developed an algorithm that could train itself to manipulate a general-purpose anthropomorphic robot hand to solve a Rubik’s cube. Milestones such as these provide strong precedent that a comprehensive solution is on the horizon, however, similar feats have been lacking in the field of end-effector design.
+          </p>
+          <p>
+          Between 2015 to 2017 e-commerce giant Amazon ran the Amazon Picking Challenge (APC), offering a cash prize to competing teams in hopes of seeing innovative solutions to the pick-and-place problem. Analysis conducted on the first APC found participants highlighting more expertise was required in “computer vision”, “motion planning” and notably “mechanical design” pertaining to end-effectors. Stagnating development of new designs for end-effectors has meant novel robotic solutions are under-capitalising on the potential improved capabilities brought by innovative end-effector design.
+          <p>
+          Current end-effector designs vary in both dimensions and grasping technologies. Various grasping technologies exist, common examples include motor actuated fingered grasping and vacuum induced suction grasping. Accompanying these technologies has been a strong body of research applying algorithmic optimisation and selection techniques to both dimensions and select the most appropriate technology for a pre-defined application. These methods have proved succesful when applied to specific tasks on a small sample of objects. However, they struggle to provide optimal solutions when presented with a variety of objects and multiple objectives.
+          </p>
+          <p>
+          Recent attempts to engineer new grasping technologies more suitable for general-purpose tasking, include compliant mechanisms and variable stiffness actuators for fingered grippers. Although promising, these technologies have yet to prove their reliability in an industrial setting and are very much in their infancy. Conversely, little research has been undertaken to develop new end-effector designs that use a hybrid of existing grasping technologies. These existing grasping methods have already been validated by industry and have a long history of reliable use.
+          </p>
+          <h3 class="py-2">Research Contribution</h3>
+          <p>
+          This body of work looks to optimise the design of an end-effector to use a hybrid of fingered and suction grasping to achieve robust grasps. Both technologies are frequently recognised within industries as providing reliable performance and accuracy at a feasible cost. When teams at the first APC were asked, half of the 14 teams that did not use suction (fingered grasping only) said they would change their designs in the future to include suction. Combining technologies can provide valuable synergies. Traditional fingered grasping methods provide the dexterity needed to grasp objects of varying geometrical complexity, whilst suction minimizes both translational and rotational degrees of freedom, making the grasp robust against wrenching forces.
+          </p>
+          <p>
+          The motivation is that the work conducted will help develop a new category of end-effector with improved capabilities through the technological synergies made and therefor outperform existing designs in general-purpose tasking.
+          </p>
+          <footer class="py-4 mx-auto text-black">
+            <p>Read the full <a href="pdfs/hybrid-end-effector-concept-research-report.pdf">research report</a></p>
+          </footer>
+        </div>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Features - Hybrid End-effector Concept</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="styles.css" rel="stylesheet">
+  </head>
+
+  <body class="d-flex h-100 bg-white">
+      <div class="d-flex w-100 h-100 mx-auto flex-column">
+        <nav class="navbar-expand-lg navbar-dark bg-dark ">
+          <div class="cover-container d-flex w-100 h-100 p-4 mx-auto flex-column text-center text-white">
+            <header class="mb-auto">
+              <h3 class="float-md-start mb-0">Hybrid End-effector Concept</h3>
+              <nav class="nav nav-masthead justify-content-center float-md-end">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="features.html">Features</a>
+                <a class="nav-link" href="problem.html">Problem</a>
+                <a class="nav-link" href="method.html">Method</a>
+              </nav>
+            </header>
+          </div>
+        </nav>
+
+        <div class="text-black text-justify cover-container d-flex w-100 h-100 p-4 mx-auto flex-column">
+          <h1 class="py-4">Five features for general-purpose grasping</h1>
+          <img class="py-2" src="photos/motor.png" alt="">
+          <p class="pt-4">
+          This work saw the identification and design of five features of an end-effector that uses both suction and fingered grasping, optimised for general-purpose tasking. The proposed design uses tendon actuation to provide underactuated fingered grasping and mechanically self-sealing suction cups. A linearly actuated planetary gearing mechanism is designed into the palm of the end-effector allowing rotation of two of the three fingers to accommodate a wider range of grasps. Finally, a novel fingertip mechanism is also devised to adapt to the contours of geometrically complex objects.
+          </p>
+          <h3 class="py-2">1. Underactuated Finger Mechanism</h3>
+          <p>
+          To decide on an appropriate finger mechanism, an assessment of various types of finger mechanisms was carried out as seen in the table below. An important consideration was the need to integrate a pneumatic system for the suction cups into each finger. As a result, the compactness of the design was a key constraint.
+          </p>
+          <img class="py-2" src="photos/finger-mechanisms.png" alt="">
+          <p class="pt-2">
+          The final mechanism chosen used a combination of tendons and pulleys, this is detailed in schematic below. This allowed for the placement of three suction cups along each phalange and three degrees-of-freedom, therefore providing a compact solution with a wide range of motion. Moreover, the resulting design is also underactuated, meaning more degrees of freedom than actuators, which allows the finger to comply to the surface geometries of the object. This is optimal for allowing the suction cups to naturally position themselves on the object with a high-quality seal.
+          </p>
+          <img class="py-2" src="photos/finger-design.png" alt="">
+          <h3 class="py-2">2. Individual Actuation</h3>
+          <p>
+          Key to operating the finger mechanism was devising an appropriate actuation system to apply tension to the tendons. End-effectors are frequently grouped into two categories: individually actuated fingers and simultaneously actuated fingers. Simultaneously actuation allows the use of a single actuator to contract all fingers in unison. Individual actuation often employs the use of multiple actuators, often one for each finger, allowing for more complex grasping strategies. The decision to use either approach is often dictated by the complexity of the end-effector’s application, simpler applications often opt for simultaneous actuation as it reduces design complexity and cost.
+          <p>
+          The ability for suction to reduce both translational and rotational degrees of freedom means a single finger can eliminate the wrenching forces of the grasped object. This allows for the remaining fingers to use force and form closure to completely secure the grasp. This is demonstrated on a book in the figure below, which prevents the spine or cover from dangling and getting damaged, a common occurrence noted in the 2017 Amazon Picking Challenge.
+          </p>
+          <img class="py-2" src="photos/individual-actuation.png" alt="">
+          <p class="pt-2">
+          As a result of the novel grasping strategies that could be achieved, as illustrated above, the design opted for individual actuation thereby maximising the variety of objects that could be grasped. The choice of actuator had to allow for precise control and high holding force when powered off. Servo motors were chosen for these reasons and could be precisely controlled from an Arduino Uno using pulse width modulation.
+          </p>
+          <img class="py-2" src="photos/actuation-system.png" alt="">
+          <h3 class="py-2">3. Self-Sealing Suction Cups</h3>
+          <p class="pt-2">
+          The choice of suction cup is the most important factor in determining the performance of a suction grasping end-effector. Convention has been to use simple ‘below’ shaped cups as these designs provide flex and compliance around the objects surface, thereby providing tight seals. However, when multiple cups are used not all cups form seals with the object resulting in pressure losses and therefore a weak grasp. Solutions such as pressure-saving valves and regulators can be used to counter this but are often bulky and expensive.
+          </p>
+          <img class="py-2" src="photos/self-sealing-suction-cup.png" alt="">
+          <p class="pt-2">
+          Instead, a novel self-sealing suction cup design is proposed that prevents pressure loss by sealing the cup until it is in contact with an object. This design is largely based on work conducted by C. Kessens et al. in 2010 and 2016 on self-sealing suction cup arrays.
+          </p>
+          <img class="py-2" src="photos/suction-cup-overview.png" alt="">
+          <p>
+          The design capitalises on the nature of force closure exerting a normal force on the lips of the suction cup and thereby compressing them. The compression actuates a small internal plug which exposes the object to the partial vacuum connected to the cups. This is achieved by fabricating the suction cup from layers of flexible rubber and rigid plastic material.
+          </p>
+          <h3 class="py-2">4.	Adaptive Fingertips</h3>
+          <p>
+          A feature often overlooked in end-effector design is the tip or distal. Commonly this part of the end-effector is either static or ignored to reduce the design’s complexity. Human hands utilise both the fat and bone structure of the fingertip and minor rotations of the finger to achieve high precision pinches. This allows the grasping of items with highly contoured surfaces. An example of such an object can be found in the 2017 Amazon Picking Challenge, where the majority of end-effectors failed to grasp sparkplugs due to its small form and highly contoured surface.
+          </p>
+          <p>
+          Consequently, the design aimed to mimic the mechanics of the human finger using a sprung tip to allow minor rotation and a soft material adhered to the rigid fingertip to mimic the fat and bone structure of the human finger. The resulting design can be seen in the figure below.
+          </p>
+          <img class="py-2" src="photos/fingertip-design.png" alt="">
+          <p class="pt-4">
+          The rotation clockwise and anticlockwise as seen in the figure below is aided by the axle being grounded in a ball bearing. When the tip is pressed against a surface the normal force overcomes the stiffness of the torsion spring and the tip begins to rotate. Once released the compression of the torsion spring against the steel pins restores the tip to its idle position.
+          </p>
+          <img class="py-2" src="photos/fingertips.png" alt="">
+          <h3 class="py-2">5.	Variable Finger Orientation</h3>
+          <p>
+          The number and orientation of fingers dictates the shapes of objects an end-effector is able to grasp. Two fingered parallel graspers are often seen in the simplest of applications, providing force closure grasping on flat surface but struggle on more geometrically complex objects. More advanced designs range from three fingers to anthropomorphic five fingered designs. Although more fingers might seem advantageous, often they add unwanted complexity and size to the end-effector.
+          </p>
+          <p>
+          Instead, three fingered designs have proven to be effective at grasping an ample number of objects without adding unnecessary complexity. A common pose chosen is a 120-degree separation of all fingers, this is optimal for grasping spherical objects but is less effective at grasping more cubic objects. Therefore, a mechanism is designed into the palm of the end-effector that orients three fingers to two distinct poses depending on which is optimal for the object being grasped, as seen in the figure below.
+          </p>
+          <img class="py-2" src="photos/finger-orientation.png" alt="">
+          <p>
+          The design is achieved using a two-level planetary gear mechanism embedded into the palm of the end-effector. This mechanism is driven by a linear motion beneath the end-effector, the motion is translated through the linkage structure to a rotational motion that rotates and moves the planet gear. These gears are secured to the fingers using a square axle allowing the transition between possess, this is closely examined in the below figure.
+          </p>
+          <img class="py-2" src="photos/gear-system.png" alt="">
+          <h3 class="py-2">Summary</h3>
+          <p>
+          The five features which were identified and designed to optimise the end-effector’s general-purpose grasping performance were: an underactuated finger mechanism; individually actuated fingers; self-sealing suction cups; adaptive fingertips and a variable finger orientation mechanism. The final design being an end-effector optimised to use both traditional fingered grasping and suction grasping, capable of robust grasping of a variety of objects.
+          </p>
+          <img class="pb-4" src="photos/features.jpg" alt="">
+          <footer class="py-4 mx-auto text-black">
+            <p>Read the full <a href="pdfs/hybrid-end-effector-concept-research-report.pdf">research report</a></p>
+          </footer>
+        </div>
+      </div>
+  </body>
+</html>
