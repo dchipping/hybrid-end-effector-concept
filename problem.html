@@ -13,12 +13,36 @@
     <link href="styles.css" rel="stylesheet">
   </head>
 
-  <body class="d-flex h-100 bg-white">
+  <body class="d-flex h-100">
+      <script type="text/javascript">
+        let body =  document.querySelector("body");
+        let isDarkMode = false;
+        document.addEventListener("keydown", (event) => {
+          let par = document.querySelectorAll("p, h1, h2, h3, h4");
+          if (event.key == "n" || event.key == "d") {
+            isDarkMode = !isDarkMode;
+            if (isDarkMode) {
+              body.style.backgroundColor = "#212529";
+              for (i = 0; i < par.length; i++) {
+                  par[i].style.color = "white";
+              }
+              isDarkMode = true;
+            } else {
+              body.style.backgroundColor = "white";
+              for (i = 0; i < par.length; i++) {
+                  par[i].style.color = par[i].id == "title" ? "white" : "#212529";
+              }
+              isDarkMode = false;
+            };
+          };
+        });
+      </script>
+
       <div class="d-flex w-100 h-100 mx-auto flex-column">
         <nav class="navbar-expand-lg navbar-dark bg-dark ">
           <div class="cover-container d-flex w-100 h-100 p-4 mx-auto flex-column text-center text-white">
             <header class="mb-auto">
-              <h3 class="float-md-start mb-0">Hybrid End-effector Concept</h3>
+              <h3 id="title" class="float-md-start mb-0">Hybrid End-effector Concept</h3>
               <nav class="nav nav-masthead justify-content-center float-md-end">
                 <a class="nav-link" href="index.html">Home</a>
                 <a class="nav-link" href="features.html">Features</a>
